@@ -38,10 +38,10 @@ KERNEL_PATH = /usr/src/linux-headers-`uname -r`
 #KERNEL_PATH = /usr/src/linux-headers-`uname -r`
 
 all:
-	make -C $(KERNEL_PATH) M=$(PWD) modules
+	make -C $(KERNEL_PATH) M=$(shell pwd) modules
 
 clean:
-	make -C $(KERNEL_PATH) M=$(PWD) clean
+	make -C $(KERNEL_PATH) M=$(shell pwd) clean
 	rm -f Module.symvers
 
 endif
